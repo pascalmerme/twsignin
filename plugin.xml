@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="fr.lafactoria.twitter"
+  version="0.0.1">
+
+    <name>Twitter Sign In</name>
+    <description>Native Twitter Sign In</description>
+    <author>La Factoria - Pascal Merme</author>
+    <license>Apache 2.0 License</license>
+    <engines>
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+
+    <js-module src="www/twitter.js" name="twitter">
+        <clobbers target="lafactoria.twitter" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Twitter">
+                <param name="android-package" value="fr.lafactoria.Twitter"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/Twitter.java" target-dir="src/fr/lafactoria" />
+    </platform>
+</plugin>
