@@ -5,6 +5,7 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.apache.cordova.*;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -37,37 +38,17 @@ public class TwitterManager extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        Context context = cordova.getActivity().getApplicationContext();
+        CordovaActivity activity = cordova.getActivity()
+        Context context = activity.getApplicationContext();
 
         // TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         // Fabric.with(this, new Twitter(authConfig));
 
         if (action.equals("logout")) {
 
-           TwitterSession session = Twitter.getSessionManager().getActiveSession();
-           session.logout();
+            Twitter.getInstance();
+            Twitter.logOut();
 
-           loadUrl("file:///android_asset/www/login.html");
-
-            final View nativeControls  = LayoutInflater.from(this).inflate(R.layout.main, null);
-            this.root.addView(nativeControls, 1);
-
-            loginButton = (TwitterLoginButton) findViewById(R.id.twitter_login_button);
-            loginButton.setCallback(new Callback<TwitterSession>() {
-                @Override
-                public void success(Result<TwitterSession> result) {
-                    // Do something with result, which provides a TwitterSession for making API calls
-                    Log.d(TAG, "Success");
-                    ((ViewManager) nativeControls.getParent()).removeView(nativeControls);
-                    TwitterSession newSession = Twitter.getSessionManager().getActiveSession();
-                    launchApp(newSession);
-                }
-                @Override
-                public void failure(TwitterException exception) {
-                    // Do something on failure
-                    Log.d(TAG, "Failure");
-                }
-            });
             return true;
         }
 
