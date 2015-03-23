@@ -37,18 +37,22 @@ public class TwitterManager extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-
+        Log.d(TAG, "Execute");
         // TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         // Fabric.with(this, new Twitter(authConfig));
 
         if (action.equals("logout")) {
+            Log.d(TAG, "Logout");
 
             Twitter.getInstance();
             Twitter.logOut();
 
+            Log.d(TAG, "Log out end");
+
             return true;
         }
 
+        Log.d(TAG, "Execute end");
         // Twitter end
 
         return false;
