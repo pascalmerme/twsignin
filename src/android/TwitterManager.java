@@ -5,7 +5,7 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.apache.cordova.*;
+import org.apache.cordova.CordovaActivity;
 
 import android.app.PendingIntent;
 import android.content.Context;
