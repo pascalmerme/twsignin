@@ -38,9 +38,6 @@ public class TwitterManager extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-        CordovaActivity activity = cordova.getActivity();
-        Context context = activity.getApplicationContext();
-
         // TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         // Fabric.with(this, new Twitter(authConfig));
 
