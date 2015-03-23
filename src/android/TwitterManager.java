@@ -47,6 +47,8 @@ public class TwitterManager extends CordovaPlugin {
             Twitter.getInstance();
             Twitter.logOut();
 
+            cordova.getActivity().setUpTwitterLogin();
+
             Log.d(TAG, "Log out end");
 
             return true;
