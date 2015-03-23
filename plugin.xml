@@ -12,7 +12,7 @@
     </engines>
 
     <js-module src="www/twitterManager.js" name="twitterManager">
-        <clobbers target="lafactoria.twitterManager" />
+        <clobbers target="cordova.plugins.twitterManager" />
     </js-module>
 
     <platform name="android">
