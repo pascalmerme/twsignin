@@ -17,7 +17,7 @@
 
     <platform name="android">
         <config-file target="config.xml" parent="/*">
-            <feature name="Twitter">
+            <feature name="TwitterManager">
                 <param name="android-package" value="fr.lafactoria.TwitterManager"/>
             </feature>
         </config-file>
