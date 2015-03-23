@@ -11,8 +11,8 @@
         <engine name="cordova" version=">=3.5.0" />
     </engines>
 
-    <js-module src="www/twitter.js" name="twitter">
-        <clobbers target="lafactoria.twitter" />
+    <js-module src="www/twitterManager.js" name="twitterManager">
+        <clobbers target="lafactoria.twitterManager" />
     </js-module>
 
     <platform name="android">
