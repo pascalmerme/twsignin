@@ -39,8 +39,8 @@ public class TwitterManager extends CordovaPlugin {
 
         Context context = cordova.getActivity().getApplicationContext();
 
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Twitter(authConfig));
+        // TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        // Fabric.with(this, new Twitter(authConfig));
 
         if (action.equals("logout")) {
 
