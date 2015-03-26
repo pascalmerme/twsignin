@@ -23,4 +23,15 @@
         </config-file>
         <source-file src="src/android/TwitterManager.java" target-dir="src/fr/lafactoria" />
     </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="TwitterManager">
+                <param name="ios-package" value="fr.lafactoria.TwitterManager" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/TwitterManager.h" />
+        <source-file src="src/ios/TwitterManager.m" />
+    </platform>
 </plugin>
