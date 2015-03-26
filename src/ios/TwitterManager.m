@@ -7,7 +7,7 @@
 #import <TwitterKit/TwitterKit.h>
 #import <Cordova/CDVJSON.h>
 
-- (void)execute
+- (void)logout:(CDVInvokedUrlCommand*)command
 {
     NSLog(@"Logout !!!");
 }
